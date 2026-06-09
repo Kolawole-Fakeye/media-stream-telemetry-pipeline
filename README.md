@@ -1,50 +1,27 @@
-# 🛡️ Automated Media Intelligence & Telemetry Pipeline
+## 🦅 Automated Media Intelligence & Telemetry Pipeline
+### Enterprise Multi-Source Content Analytics & Infrastructure Monitoring Engine
 
-An enterprise-grade, decoupled full-stack data pipeline designed to automate unstructured content ingestion, clean text streams, and monitor distributed infrastructure telemetry with persistent relational logging.
+A decoupled, full-stack data pipeline engineered to ingest real-time textual data from global and regional media outlets, execute text analytics frequency mapping, and manage transactional historical logging using structured SQL persistence.
 
----
+### 🚀 Live Production Instance
+* **Interactive Analytics Interface:** [https://media-stream-telemetry-pipeline-abbudw395xgzappvxiaklh.streamlit.app/]
 
-## 🏗️ Architecture Overview
+### 📊 System Architecture & Features
 
-The platform uses a decoupled microservices-inspired architecture consisting of three core layers:
+* **Dynamic Text Processing Engine:** Automatically ingests and combines live article matrices from 6 major media hubs (Reuters, Bloomberg Technology, TechCrunch, Wired, Techpoint Africa, and Business Day). It handles programmatic string manipulation, filters out linguistic noise words (stop words), and derives live keyword frequency trends.
+* **Structured SQL Persistence Layer:** Features an integrated SQLite database (`pipeline_analytics.db`) that automatically initializes tables on startup and executes explicit transactional `INSERT` statements to log historical extraction vectors.
+* **Advanced Metrics Aggregations:** Utilizes structured SQL analytical querying (`SUM`, `COUNT`, `GROUP BY`, and `ORDER BY`) to dynamically expose cumulative keyword volumes, the most active reporting sources, and dominant global trend topics.
+* **Infrastructure Telemetry Monitor:** Simulates a live system monitoring infrastructure layer tracking network throughput (Mbps), server latency (ms), and concurrent session volume.
 
-1. **Frontend Layer (`media_ui.py`)**: Built with **Streamlit**, featuring a highly customized enterprise dark-mode UI, responsive data frames, and interactive plotting mechanics.
-2. **Transport & API Layer (`media_api.py`)**: Powered by **FastAPI** running on a high-velocity, asynchronous **Uvicorn** ASGI server to manage secure RESTful endpoints.
-3. **Data Persistence Layer (`pipeline_analytics.db`)**: Powered by an embedded **SQLite** relational engine to track real-time processing audit trails and historical execution logs.
+### 🏗️ Technical Engineering Stack
 
----
+* **Backend Framework:** FastAPI REST API Engine (`main.py`) running decoupled data aggregation endpoints (`/api/trends`, `/api/history`, `/api/analytics`, `/api/telemetry`).
+* **Frontend UI Engine:** Streamlit Framework running on a stable Python 3.11 container environment, designed with native web components for ultra-fast load times and zero compilation dependencies.
+* **Database Engine:** SQLite3 relational persistence engine handling local transactional file logging.
+* **Data Manipulation Layer:** Pandas and NumPy array modeling for high-performance frontend data alignment.
 
-## 🚀 Key Functional Features
+### 🛠️ Local Environment Execution
 
-### 1. Multi-Source Content Intelligence
-* Automated analysis across 6 industry-standard target media streams (including *Reuters*, *Bloomberg Technology*, and *Techpoint Africa*).
-* A specialized text-processing algorithm that strips structural noise and conversational filler words on the fly to isolate and chart maximum-frequency keywords.
-
-### 2. Infrastructure Telemetry Streaming
-* Live network and system metrics simulation modeling real-world performance under constraint.
-* Captures and tracks key production health signals: Network Throughput (Mbps), Server Latency (ms), and System Memory Utilization.
-
-### 3. Relational SQL Accountability Audit
-* Production-ready database schema tracking every content-ingestion lifecycle event.
-* A live administrative control center executing complex backend `SELECT` statements to query real-time audit logs directly on the user interface.
-
----
-
-## 🛠️ Technology Stack & Frameworks
-
-* **Language**: Python 3
-* **Backend Framework**: FastAPI
-* **Web Server Engine**: Uvicorn (ASGI)
-* **Frontend UI**: Streamlit / Custom CSS Injection
-* **Database Engine**: SQLite3
-* **Network Protocol**: RESTful API / JSON Exchange (`requests`)
-
----
-
-## 💻 Local Installation & Deployment Guide
-
-To deploy this pipeline locally or inside your containerized environment, execute the following commands in your terminal:
-
-### 1. Clone the repository and navigate to the project directory
-```bash
-cd 02_media_intelligence_pipeline
+1. **Spin up the Backend API Gateway:**
+   ```bash
+   uvicorn main:app --reload
