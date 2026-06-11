@@ -3,7 +3,7 @@ Enterprise Multi-Source Content Analytics & Infrastructure Monitoring Engine
 A production-grade, full-stack data pipeline engineered to ingest real-time media streams, execute custom Natural Language Processing (NLP) text analytics, track historical trends using SQL persistence, and monitor system performance via dynamic telemetry tracking. The entire ecosystem is fully containerized using multi-service Docker orchestration.
 
 🚀 Live Production & Infrastructure Gateways
-Interactive Frontend Dashboard: [Insert Your Live Streamlit Link Here]
+Interactive Frontend Dashboard: [https://media-stream-telemetry-pipeline-abbudw395xgzappvxiaklh.streamlit.app/]
 
 Backend REST API Documentation: http://localhost:8000/docs (Local Swagger UI Gateway)
 
