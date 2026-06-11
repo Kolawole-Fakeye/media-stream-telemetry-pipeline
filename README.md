@@ -1,39 +1,42 @@
-# 📊 Automated Media Intelligence & Telemetry Pipeline
-### Enterprise Multi-Source Content Analytics & Infrastructure Monitoring Engine
-
+ Automated Media Intelligence & Telemetry Pipeline
+Enterprise Multi-Source Content Analytics & Infrastructure Monitoring Engine
 A production-grade, full-stack data pipeline engineered to ingest real-time media streams, execute custom Natural Language Processing (NLP) text analytics, track historical trends using SQL persistence, and monitor system performance via dynamic telemetry tracking. The entire ecosystem is fully containerized using multi-service Docker orchestration.
 
----
+🚀 Live Production & Infrastructure Gateways
+Interactive Frontend Dashboard: [Insert Your Live Streamlit Link Here]
 
-## 🚀 Live Production & Infrastructure Gateways
-* **Interactive Frontend Dashboard:** [https://media-stream-telemetry-pipeline-abbudw395xgzappvxiaklh.streamlit.app/]
-* **Backend REST API Documentation:** `http://localhost:8000/docs` (Local Swagger UI Gateway)
+Backend REST API Documentation: http://localhost:8000/docs (Local Swagger UI Gateway)
 
----
+🛠️ System Architecture & Core Engineering Features
+Custom Tokenization & NLP Ingestion Engine: Features a text-processing pipeline that ingests multi-source articles, programmatically scrubs noise stop-words via optimized set comparisons, strips typographical punctuation (.strip(",.()")), and maps real-time linguistic frequencies.
 
-## 🛠️ System Architecture & Core Engineering Features
+Relational Persistence Layer (SQLite): Implements automated database schema initialization (trend_logs) with parameterized SQL insertion queries to securely log keyword metrics, processing timestamps, and dominant corporate keywords.
 
-* **Custom Tokenization & NLP Ingestion Engine:** Features a text-processing pipeline that ingests multi-source articles, programmatically scrubs noise stop-words via optimized set comparisons, strips typographical punctuation (`.strip(",.()")`), and maps real-time linguistic frequencies.
-* **Relational Persistence Layer (SQLite):** Implements automated database schema initialization (`trend_logs`) with parameterized SQL insertion queries to securely log keyword metrics, processing timestamps, and dominant corporate keywords.
-* **High-Yield SQL Analytics Aggregations:** Utilizes downstream database computing rules (`SUM`, `COUNT`, `GROUP BY`) to query historical trend cycles and surface platform volume metrics with zero in-memory performance penalties.
-* **Isolated Multi-Container Docker Orchestration:** Decoupled into two dedicated, containerized environments running on an internal virtual network via `docker-compose`. This completely eliminates cross-environment dependency conflicts and simplifies deployment down to a single terminal command.
-* **Infrastructure Telemetry Stream:** Simulates enterprise-grade operational telemetry variables including network throughput (Mbps), system memory utilization, and backend latency metrics (ms) to mimic standard IT infrastructure health monitoring.
+High-Yield SQL Analytics Aggregations: Utilizes downstream database computing rules (SUM, COUNT, GROUP BY) to query historical trend cycles and surface platform volume metrics with zero in-memory performance penalties.
 
----
+Isolated Multi-Container Docker Orchestration: Decoupled into two dedicated, containerized environments running on an internal virtual network via docker-compose. This completely eliminates cross-environment dependency conflicts and simplifies deployment down to a single terminal command.
 
-## 🏗️ Technical Stack & Dependencies
+Infrastructure Telemetry Stream: Simulates enterprise-grade operational telemetry variables including network throughput (Mbps), system memory utilization, and backend latency metrics (ms) to mimic standard IT infrastructure health monitoring.
 
-* **Core Backend Engine:** FastAPI (0.110.0), Uvicorn (0.28.0), Pydantic (2.6.4)
-* **Data Persistence & Analytics:** SQLite3, Pandas (2.2.1), PyArrow (15.0.0)
-* **Presentation & Visualization Layer:** Streamlit (1.32.0), Plotly (5.19.0), Requests (2.31.0)
-* **DevOps Container Runtime:** Docker Engine, Docker Compose Architecture (Python 3.11-slim)
+🏗️ Technical Stack & Dependencies
+Core Backend Engine: FastAPI (0.110.0), Uvicorn (0.28.0), Pydantic (2.6.4)
 
----
+Data Persistence & Analytics: SQLite3, Pandas (2.2.1), PyArrow (15.0.0)
 
-### Method A: Production Deployment via Docker Compose (Recommended)
+Presentation & Visualization Layer: Streamlit (1.32.0), Plotly (5.19.0), Requests (2.31.0)
+
+DevOps Container Runtime: Docker Engine, Docker Compose Architecture (Python 3.11-slim)
+
+🖥️ Local Installation & Deployment Guide
+You can run this entire multi-service stack using either traditional script execution or modern Docker container isolation:
+
+Method A: Production Deployment via Docker Compose (Recommended)
 Ensure you have Docker Desktop installed, navigate to the root directory of the project in your terminal workspace, and execute the following command:
-```bash
+
 docker-compose up --build
+
+Docker will automatically build both isolated container layers (Dockerfile.backend and Dockerfile.frontend), establish the shared bridge network, configure database variables, and launch both applications seamlessly.
+
 Backend API Gateway Available at: http://localhost:8000
 
 Frontend Analytics Interface Available at: http://localhost:8501
@@ -61,7 +64,3 @@ extracted_at: Text / Datetime | System runtime timestamp matrix (%Y-%m-%d %H:%M:
 total_keywords: Integer | Volume count of non-noise keywords successfully analyzed
 
 top_keyword: Text / String | The highest-occurring word isolated during that specific execution
-
-Once you save that, you can run the terminal command to push it:
-
-git add README.md && git commit -m "Docs: Finalized Media README styling" && git push origin main
