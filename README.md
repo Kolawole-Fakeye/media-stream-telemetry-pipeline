@@ -1,27 +1,67 @@
-## 🦅 Automated Media Intelligence & Telemetry Pipeline
+# 📊 Automated Media Intelligence & Telemetry Pipeline
 ### Enterprise Multi-Source Content Analytics & Infrastructure Monitoring Engine
 
-A decoupled, full-stack data pipeline engineered to ingest real-time textual data from global and regional media outlets, execute text analytics frequency mapping, and manage transactional historical logging using structured SQL persistence.
+A production-grade, full-stack data pipeline engineered to ingest real-time media streams, execute custom Natural Language Processing (NLP) text analytics, track historical trends using SQL persistence, and monitor system performance via dynamic telemetry tracking. The entire ecosystem is fully containerized using multi-service Docker orchestration.
 
-### 🚀 Live Production Instance
-* **Interactive Analytics Interface:** [https://media-stream-telemetry-pipeline-abbudw395xgzappvxiaklh.streamlit.app/]
+---
 
-### 📊 System Architecture & Features
+## 🚀 Live Production & Infrastructure Gateways
+* **Interactive Frontend Dashboard:** [Insert Your Live Streamlit Link Here]
+* **Backend REST API Documentation:** `http://localhost:8000/docs` (Local Swagger UI Gateway)
 
-* **Dynamic Text Processing Engine:** Automatically ingests and combines live article matrices from 6 major media hubs (Reuters, Bloomberg Technology, TechCrunch, Wired, Techpoint Africa, and Business Day). It handles programmatic string manipulation, filters out linguistic noise words (stop words), and derives live keyword frequency trends.
-* **Structured SQL Persistence Layer:** Features an integrated SQLite database (`pipeline_analytics.db`) that automatically initializes tables on startup and executes explicit transactional `INSERT` statements to log historical extraction vectors.
-* **Advanced Metrics Aggregations:** Utilizes structured SQL analytical querying (`SUM`, `COUNT`, `GROUP BY`, and `ORDER BY`) to dynamically expose cumulative keyword volumes, the most active reporting sources, and dominant global trend topics.
-* **Infrastructure Telemetry Monitor:** Simulates a live system monitoring infrastructure layer tracking network throughput (Mbps), server latency (ms), and concurrent session volume.
+---
 
-### 🏗️ Technical Engineering Stack
+## 🛠️ System Architecture & Core Engineering Features
 
-* **Backend Framework:** FastAPI REST API Engine (`main.py`) running decoupled data aggregation endpoints (`/api/trends`, `/api/history`, `/api/analytics`, `/api/telemetry`).
-* **Frontend UI Engine:** Streamlit Framework running on a stable Python 3.11 container environment, designed with native web components for ultra-fast load times and zero compilation dependencies.
-* **Database Engine:** SQLite3 relational persistence engine handling local transactional file logging.
-* **Data Manipulation Layer:** Pandas and NumPy array modeling for high-performance frontend data alignment.
+* **Custom Tokenization & NLP Ingestion Engine:** Features a text-processing pipeline that ingests multi-source articles, programmatically scrubs noise stop-words via optimized set comparisons, strips typographical punctuation (`.strip(",.()")`), and maps real-time linguistic frequencies.
+* **Relational Persistence Layer (SQLite):** Implements automated database schema initialization (`trend_logs`) with parameterized SQL insertion queries to securely log keyword metrics, processing timestamps, and dominant corporate keywords.
+* **High-Yield SQL Analytics Aggregations:** Utilizes downstream database computing rules (`SUM`, `COUNT`, `GROUP BY`) to query historical trend cycles and surface platform volume metrics with zero in-memory performance penalties.
+* **Isolated Multi-Container Docker Orchestration:** Decoupled into two dedicated, containerized environments running on an internal virtual network via `docker-compose`. This completely eliminates cross-environment dependency conflicts and simplifies deployment down to a single terminal command.
+* **Infrastructure Telemetry Stream:** Simulates enterprise-grade operational telemetry variables including network throughput (Mbps), system memory utilization, and backend latency metrics (ms) to mimic standard IT infrastructure health monitoring.
 
-### 🛠️ Local Environment Execution
+---
 
-1. **Spin up the Backend API Gateway:**
-   ```bash
-   uvicorn main:app --reload
+## 🏗️ Technical Stack & Dependencies
+
+* **Core Backend Engine:** FastAPI (0.110.0), Uvicorn (0.28.0), Pydantic (2.6.4)
+* **Data Persistence & Analytics:** SQLite3, Pandas (2.2.1), PyArrow (15.0.0)
+* **Presentation & Visualization Layer:** Streamlit (1.32.0), Plotly (5.19.0), Requests (2.31.0)
+* **DevOps Container Runtime:** Docker Engine, Docker Compose Architecture (Python 3.11-slim)
+
+---
+
+## 🖥️ Local Installation & Deployment Guide
+
+You can run this entire multi-service stack using either traditional script execution or modern Docker container isolation:
+
+### Method A: Production Deployment via Docker Compose (Recommended)
+Ensure you have Docker Desktop installed, navigate to the root directory of the project in your terminal workspace, and execute the following command:
+```bash
+docker-compose up --build
+
+* Backend API Gateway Available at: http://localhost:8000
+* Frontend Analytics Interface Available at: http://localhost:8501
+
+### Method B: Traditional Python Local Environment Setup
+If executing without a container engine, install the requirements directly into your local virtual environment:
+pip install -r requirements.txt
+
+1. Initialize the Backend REST Service:
+   uvicorn main:app --reload --port 8000
+
+2. Initialize the Frontend Dashboard (Separate Terminal):
+   streamlit run ui.py
+
+---
+
+## 📋 Database & API Transaction Schema
+
+The internal SQLite database engine preserves processing histories according to the following relational parameters:
+
+| Table Column Header | Field Data Type | System Mapping Description |
+| :--- | :--- | :--- |
+| id | Integer | Primary Key (Autoincrementing unique row identifier) |
+| source | Text / String | Monitored media publication source (e.g., Techpoint Africa) |
+| extracted_at | Text / Datetime | System runtime timestamp matrix (%Y-%m-%d %H:%M:%S) |
+| total_keywords | Integer | Volume count of non-noise keywords successfully analyzed |
+| top_keyword | Text / String | The highest-occurring word isolated during that specific execution |
