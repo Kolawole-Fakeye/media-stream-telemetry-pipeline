@@ -34,14 +34,34 @@ A production-grade, full-stack data pipeline engineered to ingest real-time medi
 Ensure you have Docker Desktop installed, navigate to the root directory of the project in your terminal workspace, and execute the following command:
 ```bash
 docker-compose up --build
+Backend API Gateway Available at: http://localhost:8000
 
-* **Backend API Gateway Available at:** `http://localhost:8000`
-* **Frontend Analytics Interface Available at:** `http://localhost:8501`
+Frontend Analytics Interface Available at: http://localhost:8501
 
-### Method B: Traditional Python Local Environment Setup
+Method B: Traditional Python Local Environment Setup
 If executing without a container engine, install the requirements directly into your local virtual environment:
-```bash
+
 pip install -r requirements.txt
 
- | Volume count of non-noise keywords successfully analyzed |
-| top_keyword | Text / String | The highest-occurring word isolated during that specific execution |
+Initialize the Backend REST Service:
+uvicorn main:app --reload --port 8000
+
+Initialize the Frontend Dashboard (Separate Terminal):
+streamlit run ui.py
+
+📋 Database & API Transaction Schema
+The internal SQLite database engine preserves processing histories according to the following relational parameters:
+
+id: Integer | Primary Key (Autoincrementing unique row identifier)
+
+source: Text / String | Monitored media publication source (e.g., Techpoint Africa)
+
+extracted_at: Text / Datetime | System runtime timestamp matrix (%Y-%m-%d %H:%M:%S)
+
+total_keywords: Integer | Volume count of non-noise keywords successfully analyzed
+
+top_keyword: Text / String | The highest-occurring word isolated during that specific execution
+
+Once you save that, you can run the terminal command to push it:
+
+git add README.md && git commit -m "Docs: Finalized Media README styling" && git push origin main
