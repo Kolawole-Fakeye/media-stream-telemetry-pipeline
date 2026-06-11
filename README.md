@@ -6,7 +6,7 @@ A production-grade, full-stack data pipeline engineered to ingest real-time medi
 ---
 
 ## 🚀 Live Production & Infrastructure Gateways
-* **Interactive Frontend Dashboard:** [Insert Your Live Streamlit Link Here]
+* **Interactive Frontend Dashboard:** [https://media-stream-telemetry-pipeline-abbudw395xgzappvxiaklh.streamlit.app/]
 * **Backend REST API Documentation:** `http://localhost:8000/docs` (Local Swagger UI Gateway)
 
 ---
@@ -29,10 +29,6 @@ A production-grade, full-stack data pipeline engineered to ingest real-time medi
 * **DevOps Container Runtime:** Docker Engine, Docker Compose Architecture (Python 3.11-slim)
 
 ---
-
-## 🖥️ Local Installation & Deployment Guide
-
-You can run this entire multi-service stack using either traditional script execution or modern Docker container isolation:
 
 ### Method A: Production Deployment via Docker Compose (Recommended)
 Ensure you have Docker Desktop installed, navigate to the root directory of the project in your terminal workspace, and execute the following command:
