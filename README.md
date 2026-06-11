@@ -1,4 +1,4 @@
- Automated Media Intelligence & Telemetry Pipeline
+📊 Automated Media Intelligence & Telemetry Pipeline
 Enterprise Multi-Source Content Analytics & Infrastructure Monitoring Engine
 A production-grade, full-stack data pipeline engineered to ingest real-time media streams, execute custom Natural Language Processing (NLP) text analytics, track historical trends using SQL persistence, and monitor system performance via dynamic telemetry tracking. The entire ecosystem is fully containerized using multi-service Docker orchestration.
 
