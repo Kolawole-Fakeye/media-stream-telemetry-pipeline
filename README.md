@@ -35,29 +35,13 @@ Ensure you have Docker Desktop installed, navigate to the root directory of the 
 ```bash
 docker-compose up --build
 
-* Backend API Gateway Available at: http://localhost:8000
-* Frontend Analytics Interface Available at: http://localhost:8501
+* **Backend API Gateway Available at:** `http://localhost:8000`
+* **Frontend Analytics Interface Available at:** `http://localhost:8501`
 
 ### Method B: Traditional Python Local Environment Setup
 If executing without a container engine, install the requirements directly into your local virtual environment:
+```bash
 pip install -r requirements.txt
 
-1. Initialize the Backend REST Service:
-   uvicorn main:app --reload --port 8000
-
-2. Initialize the Frontend Dashboard (Separate Terminal):
-   streamlit run ui.py
-
----
-
-## 📋 Database & API Transaction Schema
-
-The internal SQLite database engine preserves processing histories according to the following relational parameters:
-
-| Table Column Header | Field Data Type | System Mapping Description |
-| :--- | :--- | :--- |
-| id | Integer | Primary Key (Autoincrementing unique row identifier) |
-| source | Text / String | Monitored media publication source (e.g., Techpoint Africa) |
-| extracted_at | Text / Datetime | System runtime timestamp matrix (%Y-%m-%d %H:%M:%S) |
-| total_keywords | Integer | Volume count of non-noise keywords successfully analyzed |
+ | Volume count of non-noise keywords successfully analyzed |
 | top_keyword | Text / String | The highest-occurring word isolated during that specific execution |
