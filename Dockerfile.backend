@@ -1,0 +1,20 @@
+# Use a lightweight, pre-compiled official Python 3.11 image
+FROM python:3.11-slim
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy over our dependencies first to leverage Docker's caching layer
+COPY requirements.txt .
+
+# Install the exact packages required for the backend engine
+RUN pip install --no-cache-dir fastapi uvicorn pydantic pandas pyarrow requests plotly
+
+# Copy the rest of our application files into the container
+COPY . .
+
+# Expose the standard FastAPI port
+EXPOSE 8000
+
+# Command to run the backend engine automatically on boot
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
